@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    background-color: rgb(235, 235, 235);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    h1{
+        align-self:center;
+        margin-top:50px;
+        margin-bottom: 30px;
+        i{
+            margin-left: 10px;
+            cursor: pointer;
+            color: rgb(236, 193, 0);
+            font-size: 0.8em;
+            &:hover{
+                transform: scale(1.3);
+                transition: 0.3s;
+            }
+        }
+    }
+    section{
+        justify-self: center;
+        align-self: center;
+        background-color: white;
+        padding: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        width: 70%;
+        display:flex;
+        flex-direction: column;
+        .note-add{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: block;
+            display: none;
+            i{
+                font-size:1.5em;
+                &:hover{
+                    transform: scale(1.2);
+                    transition: 0.2s;
+                }
+            }
+        }
+        .textarea-title-add{
+            margin-top: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.158);
+            padding:5px;
+            border-radius: 10px;
+            outline: none;
+            // display: block;
+            width: 100%;
+            overflow: hidden;
+            resize: none;
+            min-height: 20px;
+            line-height: 20px;
+        }
+        .textarea-add{
+            margin-top: 5px;
+            border: 1px solid rgba(0, 0, 0, 0.158);
+            padding:5px;
+            border-radius: 10px;
+            outline: none;
+            // display: block;
+            width: 100%;
+            overflow: hidden;
+            resize: none;
+            min-height: 100px;
+            line-height: 20px;
+        }
+        button{
+            background-color: white;
+            border: none;
+            outline: none;
+            i{
+                margin-top:20px;
+                justify-self: end;
+                cursor: pointer;
+                color: rgb(236, 193, 0);
+                font-size: 1.1em;
+            }
+        }
+        i{
+            margin-top:20px;
+            justify-self: end;
+            cursor: pointer;
+            color: rgb(236, 193, 0);
+            font-size: 1.1em;
+        }
+        ul{
+            list-style: none;
+            li{
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                h3{
+                    font-weight: 500;
+                    width: 100%;
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .edit{
+                        cursor: pointer;
+                        color: rgb(236, 193, 0);
+                        font-size: 1.1em;
+                        display: block;
+                        &:hover{
+                            transform: scale(1.2);
+                            transition: 0.2s;
+                        }
+                    }
+                    .trash{
+                        display: block;
+                        cursor: pointer;
+                        color: rgb(206, 0, 0);
+                        font-size: 1.25em;
+                        &:hover{
+                            transform: scale(1.2);
+                            transition: 0.2s;
+                        }
+                    }
+                }
+                .update-form{
+                    display: flex;
+                    i{
+                        margin-left: 10px;
+                        cursor: pointer;
+                        color: rgb(236, 193, 0);
+                        font-size: 1.1em;
+                        &:hover{
+                            transform: scale(1.2);
+                            transition: 0.2s;
+                        }
+                    }
+                    .textarea-edit {
+                        margin-top: 5px;
+                        border: 1px solid rgba(0, 0, 0, 0.158);
+                        padding:5px;
+                        border-radius: 10px;
+                        outline: none;
+                        width: 100%;
+                        overflow: hidden;
+                        resize: none;
+                        min-height: 40px;
+                        line-height: 20px;
+                    }
+                }
+                p{
+                    font-weight: 300;
+                    margin-top:3px;
+                    color: rgb(177, 177, 177);
+                }
+                hr{
+                    width: 100%;
+                    margin-top: 7px;
+                    border-top: 0.3px solid lightgray;
+                }
+                &:last-child{
+                    margin-bottom: 10px;
+                    hr{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        border-top: 1px solid rgb(185, 185, 185);
+        background-color: white;
+        height: 10%;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            font-weight: 300;
+        }
+    }
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}

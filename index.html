@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>apple Note clone</title>
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body id="app">
+
+    <h1>Notes <i @click="displayInput" class="fas fa-plus"></i></h1>
+
+    <section>
+        <div class="note-add">
+
+            <div>
+                <textarea v-model="note.title" class="textarea-title-add" role="textbox" contenteditable v-focus placeholder="Titre de la note"></textarea>
+                <textarea v-model="note.content" class="textarea-add" role="textbox" contenteditable placeholder="Contenue de la note"></textarea>
+            </div>
+
+            <button v-if="note.title && note.content" @click="addNote">
+                <i class="far fa-save"></i>
+            </button>
+
+        </div>
+
+        <ul>
+
+            <i v-if="notes.length" @click="displayOptions" id="circles" class="fas fa-ellipsis-h"></i>
+            
+            <li v-for="note in notes" :key="note.id">
+                
+                <h3>{{note.title}} ({{note.content.length}} {{ note.content.length > 1 ? "caractères": "caractère" }})
+                    <i v-if="!show" :id="note.id" @click="updateForm(note.id)" class="fas fa-edit edit"></i>
+                    <i v-else @click="deleteNote(note.id)" id="trash" class="fas fa-times trash"></i>
+                </h3>
+                
+                <p v-model="note.description">{{note.fullDate}} {{note.description}}</p>
+                
+                <div v-if="!update && showForm === note.id" class="update-form">
+                    <textarea :data-id="note.id" v-model="note.content" class="textarea-edit" role="textbox" v-focus contenteditable>{{note.content}}</textarea>
+                    <i @click="updateNote(note.id)" class="far fa-save"></i>
+                </div>
+                
+                <hr>
+            
+            </li>
+            
+            <p style="text-align: center; margin-bottom: 20px;" v-if="!notes.length">Appuyez sur "<i class="fas fa-plus"></i>"  pour creer une note</p>
+        
+        </ul>
+    
+    </section>
+
+    <footer>
+        <p>{{notes.length}} {{ notes.length > 1 ? "notes": "note" }}</p>
+    </footer>
+
+  </body>
+</html>
